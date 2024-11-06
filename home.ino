@@ -12,8 +12,8 @@
 
 #include <map>
 
-#define WIFI_SSID         "SREETHAR"    
-#define WIFI_PASS         "SREETHAR,ECE"
+#define WIFI_SSID         "SSID"    
+#define WIFI_PASS         "PASSWORD"
 #define APP_KEY           "xxxxxxxxxxxxxxxxxxxxxxxx"      // Should look like "de0bxxxx-1x3x-4x3x-ax2x-5dabxxxxxxxx"
 #define APP_SECRET        "xxxxxxxxxxxxxxxxxxxxxxxx"   // Should look like "5f36xxxx-x3x7-4x3x-xexe-e86724a9xxxx-4c4axxxx-3x3x-x5xe-x9x3-333d65xxxxxx"
 
