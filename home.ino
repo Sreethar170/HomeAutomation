@@ -1,12 +1,10 @@
-// Uncomment the following line to enable serial debug output
 #define ENABLE_DEBUG
 
 #ifdef ENABLE_DEBUG
-       #define DEBUG_ESP_PORT Serial
-       #define NODEBUG_WEBSOCKETS
-       #define NDEBUG
+#define DEBUG_ESP_PORT Serial
+#define NODEBUG_WEBSOCKETS
+#define NDEBUG
 #endif 
-
 #include <Arduino.h>
 #include <ESP32WiFi.h>
 #include "SinricPro.h"
@@ -16,13 +14,13 @@
 
 #define WIFI_SSID         "SREETHAR"    
 #define WIFI_PASS         "SREETHAR,ECE"
-#define APP_KEY           "8b541217-80bb-4989-8ec8-d8c8b1467231"      // Should look like "de0bxxxx-1x3x-4x3x-ax2x-5dabxxxxxxxx"
-#define APP_SECRET        "0adebdd7-9a6a-4cb6-bb3f-64030ce3b976-49519e2c-9401-431c-b491-8e8340a55223"   // Should look like "5f36xxxx-x3x7-4x3x-xexe-e86724a9xxxx-4c4axxxx-3x3x-x5xe-x9x3-333d65xxxxxx"
+#define APP_KEY           "xxxxxxxxxxxxxxxxxxxxxxxx"      // Should look like "de0bxxxx-1x3x-4x3x-ax2x-5dabxxxxxxxx"
+#define APP_SECRET        "xxxxxxxxxxxxxxxxxxxxxxxx"   // Should look like "5f36xxxx-x3x7-4x3x-xexe-e86724a9xxxx-4c4axxxx-3x3x-x5xe-x9x3-333d65xxxxxx"
 
 //Enter the device IDs here
-#define device_ID_1   "66a8a8f96e1af359351fbafb"
-#define device_ID_2   "66a8a898674e208e6f022f74"
-#define device_ID_3   "66a8a8dd5d818a66fad3d3b0"
+#define device_ID_1   "xxxxxxxxxxxxxxxxxxxxxxxx"
+#define device_ID_2   "xxxxxxxxxxxxxxxxxxxxxxxx"
+#define device_ID_3   "xxxxxxxxxxxxxxxxxxxxxxxx"
 #define device_ID_4   "xxxxxxxxxxxxxxxxxxxxxxxx"
 
 // define the GPIO connected with Relays and switches
@@ -30,31 +28,18 @@
 #define RelayPin2 4  //D2
 #define RelayPin3 14 //D5
 #define RelayPin4 12 //D6
-
 #define SwitchPin1 10  //SD3
 #define SwitchPin2 0   //D3 
 #define SwitchPin3 13  //D7
 #define SwitchPin4 3   //RX
-
 #define wifiLed   16   //D0
-
-// comment the following line if you use a toggle switches instead of tactile buttons
 #define TACTILE_BUTTON 1
-
 #define BAUD_RATE   9600
-
 #define DEBOUNCE_TIME 250
-
 typedef struct {      // struct for the std::map below
   int relayPIN;
   int flipSwitchPIN;
 } deviceConfig_t;
-
-
-// this is the main configuration
-// please put in your deviceId, the PIN for Relay and PIN for flipSwitch
-// this can be up to N devices...depending on how much pin's available on your device ;)
-// right now we have 4 devicesIds going to 4 relays and 4 flip switches to switch the relay manually
 std::map<String, deviceConfig_t> devices = {
     //{deviceId, {relayPIN,  flipSwitchPIN}}
     {device_ID_1, {  RelayPin1, SwitchPin1 }},
